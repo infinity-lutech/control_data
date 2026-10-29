@@ -31,7 +31,13 @@ from pathlib import Path
 
 from PIL import Image
 
-FIGMA_TOKEN = ""  # set env FIGMA_TOKEN (never commit it)
+FIGMA_TOKEN = ""  # set FIGMA_TOKEN in .env (gitignored) or env
+_env = Path(__file__).resolve().parent.parent / ".env"
+if _env.exists():
+    for _l in _env.read_text(encoding="utf-8").splitlines():
+        _k, _, _v = _l.partition("=")
+        if _k.strip() == "FIGMA_TOKEN" and _v.strip():
+            FIGMA_TOKEN = _v.strip().strip('"')
 
 FILE_KEY = "2OD8WoqtHsqDLi3QqnIcmC"
 PAGE_ID = "49:582"
