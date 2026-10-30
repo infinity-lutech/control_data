@@ -7,8 +7,10 @@ Only sets below the text "Link Animation" on page "Control Center" are used. Per
   ic_on/ic_off (nearest) -> data/bg_ic_on/off.webp @2x
   "bg" 432x195 next to ic_1 (nearest) -> data/bg_focus.webp @2x
   items_N     -> remaining data/*.webp (see ITEMS)
+  items_N > ic_focus_off > Text > TEXT fill -> labelColor of the "focus" tile
 Every PNG render is saved as lossless WebP; data/control_center_config.json is built from CONFIG.
 The 10 .pag in <anim>/<stt>/ (see PAGS) are copied flat into data/, then data/ is zipped to data.zip.
+Each finished set is merged into <out>/data.json (keyword from infomationN "keyword": "a,b,c").
 
 Usage:
   python export_figma_cc.py --only 2 [--out DIR] [--anim DIR] [--dry-run]
@@ -44,6 +46,12 @@ PAGE_ID = "49:582"
 ANCHOR_TEXT = "Link Animation"
 MAX_PAIR_DISTANCE = 3000  # px on canvas; rows are ~2600px apart
 TEXT_COLOR = "#CCFFFFFF"
+PRICE = 100  # data.json item price
+# Per-set misnamed layers: stt -> {layer name in Figma: name it stands for} (uses its last copy)
+LAYER_AS = {
+    169: {"ic_bluetooth_on": "ic_bluetooth_off"},  # 2x ic_bluetooth_on, on/off icons identical
+    **{stt: {"music": "brightness_bg"} for stt in range(203, 207)},
+}
 
 # items_N child name -> (how, scale, output name)
 #   self:  export the child itself      inner: its single child frame      moon: its "ic_moon" descendant
@@ -254,14 +262,71 @@ def find(node, name):
     return None
 
 
-def resolve_assets(info, items):
-    """-> (subject, [(node_id, scale, relative dest)]); raises ValueError on a broken set."""
-    m = re.search(r'"subject"\s*:\s*"([^"]+)"', text_of(info))
-    if not m:
-        raise ValueError("không đọc được subject")
+def hex_color(fill):
+    c = fill["color"]
+    a = c.get("a", 1) * fill.get("opacity", 1)
+    rgb = "".join(f"{round(c[k] * 255):02X}" for k in "rgb")
+    return f"#{rgb}" if round(a * 255) == 255 else f"#{round(a * 255):02X}{rgb}"
+
+
+def focus_label_color(items):
+    """items_N > ic_focus_off > Text > TEXT fill -> labelColor of the "focus" tile."""
+    off = next((c for c in items.get("children", []) if c["name"] == "ic_focus_off"), None)
+    text = find(off, "Text") if off else None
+    node = text if text and text["type"] == "TEXT" else next(
+        (c for c in (text or {}).get("children", []) if c["type"] == "TEXT"), None)
+    fill = next((f for f in (node or {}).get("fills", []) if f["type"] == "SOLID" and f.get("visible", True)), None)
+    if fill is None:
+        raise ValueError("không thấy fill SOLID của ic_focus_off > Text")
+    return hex_color(fill)
+
+
+def read_info(info):
+    """-> (subject, keywords) from the infomation text."""
+    text = text_of(info)
+    s = re.search(r'"subject"\s*:\s*["“]([^"”]+)["”]', text)  # Figma text sometimes has curly quotes
+    k = re.search(r'"keyword"\s*:\s*["“]([^"”]*)["”]', text)
+    if not s or not k:
+        raise ValueError("không đọc được subject/keyword")
+    keywords = [w.strip() for w in k[1].split(",") if w.strip()]
+    if not keywords:
+        raise ValueError("keyword rỗng")
+    return s[1].split(",")[0].strip(), keywords  # "Love, Heart" -> "Love"
+
+
+def build_data_json(path, plan):
+    """Merge plan {stt: {folder, subject, keywords}} into the existing data.json content."""
+    old = path.read_text(encoding="utf-8").strip() if path.exists() else ""
+    cats = {c["id"]: c for c in json.loads(old or "[]")}
+    for p in plan.values():
+        cate_dir, name = p["folder"].parent, p["folder"].name
+        rel = f"{path.parent.name}/{cate_dir.name}"
+        icon = next(cate_dir.glob("ic_cate_*"), None)
+        cat = cats.setdefault(cate_dir.name, {"id": cate_dir.name, "name": "", "icon": "", "items": []})
+        cat["name"] = p["subject"]
+        cat["icon"] = f"{rel}/{icon.name}" if icon else ""
+        cat["items"] = [i for i in cat["items"] if i["id"] != name] + [{
+            "id": name,
+            "price": PRICE,
+            "previewUrl": f"{rel}/{name}/banner.webp",
+            "resourceUrl": f"{rel}/{name}/data.zip",
+            "keyword": p["keywords"],
+        }]
+    for cat in cats.values():
+        cat["items"].sort(key=lambda i: int(i["id"].rsplit("_", 1)[1]))
+    data = sorted(cats.values(), key=lambda c: c["name"].casefold())
+    return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+
+
+def resolve_assets(info, items, layer_as=None):
+    """-> (subject, keywords, [(node_id, scale, relative dest)]); raises ValueError on a broken set."""
+    subject, keywords = read_info(info)
     by_name = {}
     for c in items.get("children", []):
         by_name.setdefault(c["name"], []).append(c)
+    for name, other in (layer_as or {}).items():
+        if by_name.get(name) and other not in by_name:
+            by_name[other] = [by_name[name].pop()]
     jobs, bad = [], []
     for name, (how, scale, out) in ITEMS.items():
         cands = by_name.get(name, [])
@@ -283,12 +348,13 @@ def resolve_assets(info, items):
         jobs.append((node["id"], scale, f"data/{out}.webp"))
     if bad:
         raise ValueError("items: " + ", ".join(bad))
-    return m[1].split(",")[0].strip(), jobs  # "Love, Heart" -> "Love"
+    return subject, keywords, jobs
 
 
-def build_config(style_name):
+def build_config(style_name, label_color):
     cfg = copy.deepcopy(CONFIG)
     cfg["styleName"] = style_name
+    next(i for i in cfg["itemsStyle"] if i["id"] == "focus")["labelColor"] = label_color
     return json.dumps(cfg, indent=4, ensure_ascii=False) + "\n"
 
 
@@ -300,7 +366,7 @@ def save_webp(url, dest):
         im.save(dest, format="WEBP", lossless=True, method=6, exact=True)
 
 
-def export_set(figma, folder, jobs, pag_dir, workers):
+def export_set(figma, folder, jobs, pag_dir, workers, label_color):
     """Render + download one set into .<name>.tmp, then rename to folder. Returns the error, or None if OK."""
     tmp = folder.with_name(f".{folder.name}.tmp")
     shutil.rmtree(tmp, ignore_errors=True)
@@ -321,7 +387,7 @@ def export_set(figma, folder, jobs, pag_dir, workers):
 
         with ThreadPoolExecutor(workers) as pool:
             list(pool.map(save, jobs))
-        (tmp / "data" / "control_center_config.json").write_text(build_config(folder.name), encoding="utf-8")
+        (tmp / "data" / "control_center_config.json").write_text(build_config(folder.name, label_color), encoding="utf-8")
         for rel in PAGS:
             shutil.copyfile(pag_dir / rel, tmp / "data" / Path(rel).name)
         # Entries at the zip root: the app unzips straight into themes/<id>/ and expects the config there
@@ -353,10 +419,12 @@ def main():
     sets, errors = discover_sets(page, wanted)
 
     details = figma.nodes([p[k]["id"] for p in sets.values() for k in ("info", "items")], depth=4)
-    plan = {}  # stt -> (folder, jobs)
+    plan = {}  # stt -> (folder, jobs, meta)
     for stt, p in sets.items():
         try:
-            subject, jobs = resolve_assets(details[p["info"]["id"]], details[p["items"]["id"]])
+            items = details[p["items"]["id"]]
+            subject, keywords, jobs = resolve_assets(details[p["info"]["id"]], items, LAYER_AS.get(stt))
+            color = focus_label_color(items)
         except (ValueError, KeyError) as e:
             errors[stt] = str(e)
             continue
@@ -368,31 +436,36 @@ def main():
                  (p["ic_on"]["id"], 2, "data/bg_ic_on.webp"), (p["ic_off"]["id"], 2, "data/bg_ic_off.webp"),
                  (p["focus"]["id"], 2, "data/bg_focus.webp")]
         name = f"{subject.lower()}_{stt}"
-        plan[stt] = (out / subject.lower() / name, jobs)
+        folder = out / subject.lower() / name
+        plan[stt] = (folder, jobs, {"folder": folder, "subject": subject, "keywords": keywords, "color": color})
         print(f"  stt {stt}: {subject!r} -> {subject.lower()}/{name} | ic_on {p['ic_on']['id']} "
-              f"ic_off {p['ic_off']['id']} bg_focus {p['focus']['id']} ({len(jobs)} ảnh)")
+              f"ic_off {p['ic_off']['id']} bg_focus {p['focus']['id']} ({len(jobs)} ảnh) "
+              f"| labelColor {color} | {len(keywords)} keyword")
 
     if wanted - set(plan) - set(errors):
         print(f"Không thấy items_N cho stt: {sorted(wanted - set(plan) - set(errors))}")
     if errors:
         report(plan, errors, set(), "chưa chạy")
         sys.exit("Có bộ lỗi, dừng trước khi tải. Xử lý xong rồi chạy lại.")
-    existing = [str(f) for f, _ in plan.values() if f.exists()]
+    existing = [str(f) for f, *_ in plan.values() if f.exists()]
     if existing:
         sys.exit("Folder đã tồn tại, dừng (không tải gì):\n  " + "\n  ".join(existing))
     if args.dry_run:
         report(plan, errors, set(), "dry-run")
         return
 
+    data_json = out / "data.json"
     done = set()
     for stt in sorted(plan):
-        folder, jobs = plan[stt]
-        err = export_set(figma, folder, jobs, anim / str(stt), args.workers)
+        folder, jobs, meta = plan[stt]
+        err = export_set(figma, folder, jobs, anim / str(stt), args.workers, meta["color"])
         print(f"stt {stt}: {'lỗi' if err else 'OK'}", flush=True)
         if err:
             errors[stt] = err
             report(plan, errors, done, "chưa chạy")
             sys.exit("Dừng. Xử lý xong rồi chạy tiếp: --only " + ",".join(map(str, sorted(set(plan) - done))))
+        # Merge right away so data.json keeps every finished set even if a later one fails
+        data_json.write_text(build_data_json(data_json, {stt: meta}), encoding="utf-8")
         done.add(stt)
     report(plan, errors, done, "chưa chạy")
 
