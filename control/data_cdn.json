@@ -318,7 +318,7 @@
   {
     "id": "anime",
     "name": "Anime",
-    "icon": "",
+    "icon": "https://cdn-storage.lutech.vn/app/orbit_control_center/control/anime/ic_cate_anime.webp",
     "items": [
       {
         "id": "anime_131",
@@ -2207,7 +2207,7 @@
   {
     "id": "halloween",
     "name": "Halloween",
-    "icon": "",
+    "icon": "https://cdn-storage.lutech.vn/app/orbit_control_center/control/halloween/ic_cate_halloween.webp",
     "items": [
       {
         "id": "halloween_215",
@@ -2279,7 +2279,7 @@
   {
     "id": "holiday",
     "name": "Holiday",
-    "icon": "",
+    "icon": "https://cdn-storage.lutech.vn/app/orbit_control_center/control/holiday/ic_cate_holiday.webp",
     "items": [
       {
         "id": "holiday_182",
