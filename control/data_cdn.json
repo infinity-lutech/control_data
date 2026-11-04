@@ -702,19 +702,6 @@
           "3d glass icons",
           "fluffy texture icons"
         ]
-      },
-      {
-        "id": "blue_48",
-        "price": 100,
-        "previewUrl": "https://cdn-storage.lutech.vn/app/orbit_control_center/control/blue/blue_48/banner.webp",
-        "resourceUrl": "https://cdn-storage.lutech.vn/app/orbit_control_center/control/blue/blue_48/data.zip",
-        "keyword": [
-          "control center",
-          "monstera",
-          "leaf aesthetic",
-          "green control center",
-          "ios theme"
-        ]
       }
     ]
   },
@@ -2109,6 +2096,19 @@
           "feather aesthetic",
           "ios control center",
           "green theme"
+        ]
+      },
+      {
+        "id": "green_48",
+        "price": 100,
+        "previewUrl": "https://cdn-storage.lutech.vn/app/orbit_control_center/control/green/green_48/banner.webp",
+        "resourceUrl": "https://cdn-storage.lutech.vn/app/orbit_control_center/control/green/green_48/data.zip",
+        "keyword": [
+          "control center",
+          "monstera",
+          "leaf aesthetic",
+          "green control center",
+          "ios theme"
         ]
       },
       {
