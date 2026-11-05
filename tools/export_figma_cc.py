@@ -10,7 +10,7 @@ Only sets below the text "Link Animation" on page "Control Center" are used. Per
   items_N > ic_focus_off > Text > TEXT fill -> labelColor of the "focus" tile
 Every PNG render is saved as lossless WebP; data/control_center_config.json is built from CONFIG.
 The 10 .pag in <anim>/<stt>/ (see PAGS) are copied flat into data/, then data/ is zipped to data.zip.
-Each finished set is merged into <out>/data.json (keyword from infomationN "keyword": "a,b,c").
+Each finished set is merged into <out>/data.json, data_cdn.json, data_github.json (keyword from infomationN "keyword": "a,b,c").
 
 Usage:
   python export_figma_cc.py --only 2 [--out DIR] [--anim DIR] [--dry-run]
@@ -47,6 +47,12 @@ ANCHOR_TEXT = "Link Animation"
 MAX_PAIR_DISTANCE = 3000  # px on canvas; rows are ~2600px apart
 TEXT_COLOR = "#CCFFFFFF"
 PRICE = 100  # data.json item price
+# data file -> URL prefix of its icon/previewUrl/resourceUrl (same layout, different host)
+DATA_FILES = {
+    "data.json": "",
+    "data_cdn.json": "https://cdn-storage.lutech.vn/app/orbit_control_center/",
+    "data_github.json": "https://raw.githubusercontent.com/infinity-lutech/control_data/main/",
+}
 # Per-set misnamed layers: stt -> {layer name in Figma: name it stands for} (uses its last copy)
 LAYER_AS = {
     169: {"ic_bluetooth_on": "ic_bluetooth_off"},  # 2x ic_bluetooth_on, on/off icons identical
@@ -294,13 +300,13 @@ def read_info(info):
     return s[1].split(",")[0].strip(), keywords  # "Love, Heart" -> "Love"
 
 
-def build_data_json(path, plan):
-    """Merge plan {stt: {folder, subject, keywords}} into the existing data.json content."""
+def build_data_json(path, plan, prefix=""):
+    """Merge plan {stt: {folder, subject, keywords}} into the existing data file content (URLs start with prefix)."""
     old = path.read_text(encoding="utf-8").strip() if path.exists() else ""
     cats = {c["id"]: c for c in json.loads(old or "[]")}
     for p in plan.values():
         cate_dir, name = p["folder"].parent, p["folder"].name
-        rel = f"{path.parent.name}/{cate_dir.name}"
+        rel = f"{prefix}{path.parent.name}/{cate_dir.name}"
         icon = next(cate_dir.glob("ic_cate_*"), None)
         cat = cats.setdefault(cate_dir.name, {"id": cate_dir.name, "name": "", "icon": "", "items": []})
         cat["name"] = p["subject"]
@@ -454,7 +460,6 @@ def main():
         report(plan, errors, set(), "dry-run")
         return
 
-    data_json = out / "data.json"
     done = set()
     for stt in sorted(plan):
         folder, jobs, meta = plan[stt]
@@ -464,8 +469,9 @@ def main():
             errors[stt] = err
             report(plan, errors, done, "chưa chạy")
             sys.exit("Dừng. Xử lý xong rồi chạy tiếp: --only " + ",".join(map(str, sorted(set(plan) - done))))
-        # Merge right away so data.json keeps every finished set even if a later one fails
-        data_json.write_text(build_data_json(data_json, {stt: meta}), encoding="utf-8")
+        # Merge right away so the data files keep every finished set even if a later one fails
+        for name, prefix in DATA_FILES.items():
+            (out / name).write_text(build_data_json(out / name, {stt: meta}, prefix), encoding="utf-8")
         done.add(stt)
     report(plan, errors, done, "chưa chạy")
 

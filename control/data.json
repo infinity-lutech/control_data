@@ -706,6 +706,133 @@
     ]
   },
   {
+    "id": "car",
+    "name": "Car",
+    "icon": "control/car/ic_cate_car.webp",
+    "items": [
+      {
+        "id": "car_245",
+        "price": 100,
+        "previewUrl": "control/car/car_245/banner.webp",
+        "resourceUrl": "control/car/car_245/data.zip",
+        "keyword": [
+          "sports car control center",
+          "sunset orange supercar theme widgets",
+          "copper glass control center icons",
+          "white sports car cliff sunset theme icons"
+        ]
+      },
+      {
+        "id": "car_246",
+        "price": 100,
+        "previewUrl": "control/car/car_246/banner.webp",
+        "resourceUrl": "control/car/car_246/data.zip",
+        "keyword": [
+          "sports car control center",
+          "blue hour supercar theme widgets",
+          "navy glass control center icons",
+          "silver sports car salt flat reflection theme icons"
+        ]
+      },
+      {
+        "id": "car_247",
+        "price": 100,
+        "previewUrl": "control/car/car_247/banner.webp",
+        "resourceUrl": "control/car/car_247/data.zip",
+        "keyword": [
+          "sports car control center",
+          "winter snow drift theme widgets",
+          "icy blue glass control center icons",
+          "white sports car snow road theme icons"
+        ]
+      },
+      {
+        "id": "car_248",
+        "price": 100,
+        "previewUrl": "control/car/car_248/banner.webp",
+        "resourceUrl": "control/car/car_248/data.zip",
+        "keyword": [
+          "sports car control center",
+          "northern lights aurora theme widgets",
+          "teal glass control center icons",
+          "supercar arctic ice aurora night theme icons"
+        ]
+      },
+      {
+        "id": "car_249",
+        "price": 100,
+        "previewUrl": "control/car/car_249/banner.webp",
+        "resourceUrl": "control/car/car_249/data.zip",
+        "keyword": [
+          "sports car control center",
+          "purple supercar snow theme widgets",
+          "lilac glass control center icons",
+          "purple sports car pink dusk snow theme icons"
+        ]
+      },
+      {
+        "id": "car_250",
+        "price": 100,
+        "previewUrl": "control/car/car_250/banner.webp",
+        "resourceUrl": "control/car/car_250/data.zip",
+        "keyword": [
+          "muscle car control center",
+          "red smoke black car theme widgets",
+          "crimson glass control center icons",
+          "black muscle car red neon smoke theme icons"
+        ]
+      },
+      {
+        "id": "car_251",
+        "price": 100,
+        "previewUrl": "control/car/car_251/banner.webp",
+        "resourceUrl": "control/car/car_251/data.zip",
+        "keyword": [
+          "sports car control center",
+          "night city rain theme widgets",
+          "graphite glass control center icons",
+          "dark sports car red tail lights street theme icons"
+        ]
+      },
+      {
+        "id": "car_252",
+        "price": 100,
+        "previewUrl": "control/car/car_252/banner.webp",
+        "resourceUrl": "control/car/car_252/data.zip",
+        "keyword": [
+          "supercar control center",
+          "black luxury showroom theme widgets",
+          "dark graphite glass control center icons",
+          "black supercar spotlight theme icons"
+        ]
+      },
+      {
+        "id": "car_253",
+        "price": 100,
+        "previewUrl": "control/car/car_253/banner.webp",
+        "resourceUrl": "control/car/car_253/data.zip",
+        "keyword": [
+          "hypercar control center",
+          "cyan neon dark theme widgets",
+          "electric blue glass control center icons",
+          "neon blue hypercar night theme icons"
+        ]
+      },
+      {
+        "id": "car_254",
+        "price": 100,
+        "previewUrl": "control/car/car_254/banner.webp",
+        "resourceUrl": "control/car/car_254/data.zip",
+        "keyword": [
+          "luxury car control center",
+          "white silver light tunnel theme widgets",
+          "silver glass control center icons",
+          "white luxury car light tunnel theme icons"
+        ]
+      }
+    ]
+  },
+  {
     "id": "cool",
     "name": "Cool",
     "icon": "control/cool/ic_cate_cool.webp",
@@ -1331,6 +1458,253 @@
           "yellow",
           "funny",
           "doodle"
+        ]
+      },
+      {
+        "id": "cute_275",
+        "price": 100,
+        "previewUrl": "control/cute/cute_275/banner.webp",
+        "resourceUrl": "control/cute/cute_275/data.zip",
+        "keyword": [
+          "purple cloud moon control center",
+          "lavender dreamy sky theme widgets",
+          "lilac glass control center icons",
+          "cute pastel night aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "cute_276",
+        "price": 100,
+        "previewUrl": "control/cute/cute_276/banner.webp",
+        "resourceUrl": "control/cute/cute_276/data.zip",
+        "keyword": [
+          "kitten knight control center",
+          "cute cat armor misty meadow theme widgets",
+          "silver sage glass control center icons",
+          "fluffy cat warrior aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "cute_277",
+        "price": 100,
+        "previewUrl": "control/cute/cute_277/banner.webp",
+        "resourceUrl": "control/cute/cute_277/data.zip",
+        "keyword": [
+          "baby penguin control center",
+          "fluffy penguin pink sunset snow theme widgets",
+          "rose pink glass control center icons",
+          "cute winter animal aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "cute_278",
+        "price": 100,
+        "previewUrl": "control/cute/cute_278/banner.webp",
+        "resourceUrl": "control/cute/cute_278/data.zip",
+        "keyword": [
+          "cute chick control center",
+          "little yellow chick doodle theme widgets",
+          "butter yellow glass control center icons",
+          "kawaii pastel yellow aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "cute_279",
+        "price": 100,
+        "previewUrl": "control/cute/cute_279/banner.webp",
+        "resourceUrl": "control/cute/cute_279/data.zip",
+        "keyword": [
+          "teddy bear control center",
+          "fluffy bear pink heart theme widgets",
+          "warm beige glass control center icons",
+          "cozy soft plush aesthetic theme icons"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dark",
+    "name": "Dark",
+    "icon": "control/dark/ic_cate_dark.webp",
+    "items": [
+      {
+        "id": "dark_280",
+        "price": 100,
+        "previewUrl": "control/dark/dark_280/banner.webp",
+        "resourceUrl": "control/dark/dark_280/data.zip",
+        "keyword": [
+          "moonlit village control center",
+          "ancient chinese mountain night theme widgets",
+          "dark slate glass control center icons",
+          "lantern river fantasy aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_281",
+        "price": 100,
+        "previewUrl": "control/dark/dark_281/banner.webp",
+        "resourceUrl": "control/dark/dark_281/data.zip",
+        "keyword": [
+          "dark galaxy control center",
+          "black planet orange glow theme widgets",
+          "bronze glass control center icons",
+          "cosmic space night aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_282",
+        "price": 100,
+        "previewUrl": "control/dark/dark_282/banner.webp",
+        "resourceUrl": "control/dark/dark_282/data.zip",
+        "keyword": [
+          "lava rock control center",
+          "red fire volcano theme widgets",
+          "black red glass control center icons",
+          "dark burning magma aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_283",
+        "price": 100,
+        "previewUrl": "control/dark/dark_283/banner.webp",
+        "resourceUrl": "control/dark/dark_283/data.zip",
+        "keyword": [
+          "black panther control center",
+          "blue eyes dark jaguar theme widgets",
+          "navy steel glass control center icons",
+          "dark wild animal aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_284",
+        "price": 100,
+        "previewUrl": "control/dark/dark_284/banner.webp",
+        "resourceUrl": "control/dark/dark_284/data.zip",
+        "keyword": [
+          "liquid chrome control center",
+          "black silver metal abstract theme widgets",
+          "chrome glass control center icons",
+          "dark luxury 3d metallic aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_285",
+        "price": 100,
+        "previewUrl": "control/dark/dark_285/banner.webp",
+        "resourceUrl": "control/dark/dark_285/data.zip",
+        "keyword": [
+          "moonlit ocean control center",
+          "dark blue night sea rocks theme widgets",
+          "navy blue glass control center icons",
+          "full moon coast aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_286",
+        "price": 100,
+        "previewUrl": "control/dark/dark_286/banner.webp",
+        "resourceUrl": "control/dark/dark_286/data.zip",
+        "keyword": [
+          "red maple leaf control center",
+          "black stone crimson leaves theme widgets",
+          "dark red glass control center icons",
+          "gothic autumn aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_287",
+        "price": 100,
+        "previewUrl": "control/dark/dark_287/banner.webp",
+        "resourceUrl": "control/dark/dark_287/data.zip",
+        "keyword": [
+          "blue lightning control center",
+          "dark storm thunder clouds theme widgets",
+          "electric blue glass control center icons",
+          "night thunderstorm aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_288",
+        "price": 100,
+        "previewUrl": "control/dark/dark_288/banner.webp",
+        "resourceUrl": "control/dark/dark_288/data.zip",
+        "keyword": [
+          "golden planet control center",
+          "dark space saturn rings theme widgets",
+          "gold bronze glass control center icons",
+          "luxury cosmic galaxy aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_289",
+        "price": 100,
+        "previewUrl": "control/dark/dark_289/banner.webp",
+        "resourceUrl": "control/dark/dark_289/data.zip",
+        "keyword": [
+          "black and white space control center",
+          "monochrome alien planet theme widgets",
+          "silver grey glass control center icons",
+          "dark lunar landscape aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_290",
+        "price": 100,
+        "previewUrl": "control/dark/dark_290/banner.webp",
+        "resourceUrl": "control/dark/dark_290/data.zip",
+        "keyword": [
+          "glowing jellyfish control center",
+          "deep blue ocean underwater theme widgets",
+          "aqua blue glass control center icons",
+          "dark sea creature aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_291",
+        "price": 100,
+        "previewUrl": "control/dark/dark_291/banner.webp",
+        "resourceUrl": "control/dark/dark_291/data.zip",
+        "keyword": [
+          "neon triangle control center",
+          "purple synthwave mountain lake theme widgets",
+          "violet neon glass control center icons",
+          "dark cyber geometric aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_292",
+        "price": 100,
+        "previewUrl": "control/dark/dark_292/banner.webp",
+        "resourceUrl": "control/dark/dark_292/data.zip",
+        "keyword": [
+          "astronaut moon control center",
+          "dark space lunar surface theme widgets",
+          "silver chrome glass control center icons",
+          "black galaxy explorer aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_293",
+        "price": 100,
+        "previewUrl": "control/dark/dark_293/banner.webp",
+        "resourceUrl": "control/dark/dark_293/data.zip",
+        "keyword": [
+          "aurora borealis control center",
+          "blue purple northern lights theme widgets",
+          "midnight blue glass control center icons",
+          "starry night mountain aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "dark_294",
+        "price": 100,
+        "previewUrl": "control/dark/dark_294/banner.webp",
+        "resourceUrl": "control/dark/dark_294/data.zip",
+        "keyword": [
+          "starry night sky control center",
+          "milky way galaxy stars theme widgets",
+          "dark navy glass control center icons",
+          "minimal night sky aesthetic theme icons"
         ]
       }
     ]
@@ -2532,6 +2906,102 @@
           "seonghyeon",
           "keonho"
         ]
+      },
+      {
+        "id": "kpop_237",
+        "price": 100,
+        "previewUrl": "control/kpop/kpop_237/banner.webp",
+        "resourceUrl": "control/kpop/kpop_237/data.zip",
+        "keyword": [
+          "bangtan sonyeondan purple concert control center",
+          "lavender galaxy dreamy theme widgets",
+          "soft violet glass control center icons",
+          "bts purple light stick stage theme icons"
+        ]
+      },
+      {
+        "id": "kpop_238",
+        "price": 100,
+        "previewUrl": "control/kpop/kpop_238/banner.webp",
+        "resourceUrl": "control/kpop/kpop_238/data.zip",
+        "keyword": [
+          "black pink concert control center",
+          "pastel pink dreamy theme widgets",
+          "soft pink glass control center icons",
+          "black pink heart light stick stage theme icons"
+        ]
+      },
+      {
+        "id": "kpop_239",
+        "price": 100,
+        "previewUrl": "control/kpop/kpop_239/banner.webp",
+        "resourceUrl": "control/kpop/kpop_239/data.zip",
+        "keyword": [
+          "bigbang control center",
+          "vip black gold theme widgets",
+          "luxury gold glass control center icons",
+          "gold crown light stick concert theme icons"
+        ]
+      },
+      {
+        "id": "kpop_240",
+        "price": 100,
+        "previewUrl": "control/kpop/kpop_240/banner.webp",
+        "resourceUrl": "control/kpop/kpop_240/data.zip",
+        "keyword": [
+          "cortis control center",
+          "pastel sky blue theme widgets",
+          "soft blue glass control center icons",
+          "cortis summer sky aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "kpop_241",
+        "price": 100,
+        "previewUrl": "control/kpop/kpop_241/banner.webp",
+        "resourceUrl": "control/kpop/kpop_241/data.zip",
+        "keyword": [
+          "bts control center",
+          "black gray aesthetic theme widgets",
+          "silver glass control center icons",
+          "bts palace night smoke theme icons"
+        ]
+      },
+      {
+        "id": "kpop_242",
+        "price": 100,
+        "previewUrl": "control/kpop/kpop_242/banner.webp",
+        "resourceUrl": "control/kpop/kpop_242/data.zip",
+        "keyword": [
+          "kpop dreamy control center",
+          "purple pastel fantasy theme widgets",
+          "soft violet glass control center icons",
+          "purple cloud stairway sky theme icons"
+        ]
+      },
+      {
+        "id": "kpop_243",
+        "price": 100,
+        "previewUrl": "control/kpop/kpop_243/banner.webp",
+        "resourceUrl": "control/kpop/kpop_243/data.zip",
+        "keyword": [
+          "seventeen concert control center",
+          "navy blue stage theme widgets",
+          "steel blue glass control center icons",
+          "kpop blue spotlight concert night theme icons"
+        ]
+      },
+      {
+        "id": "kpop_244",
+        "price": 100,
+        "previewUrl": "control/kpop/kpop_244/banner.webp",
+        "resourceUrl": "control/kpop/kpop_244/data.zip",
+        "keyword": [
+          "kpop concert control center",
+          "lavender purple light stick theme widgets",
+          "soft violet glass control center icons",
+          "crystal light stick galaxy stage theme icons"
+        ]
       }
     ]
   },
@@ -2781,6 +3251,299 @@
           "space",
           "funny"
         ]
+      },
+      {
+        "id": "movie_234",
+        "price": 100,
+        "previewUrl": "control/movie/movie_234/banner.webp",
+        "resourceUrl": "control/movie/movie_234/data.zip",
+        "keyword": [
+          "avatar film control center",
+          "movie",
+          "lavender purple fantasy theme widgets",
+          "soft violet glass control center icons",
+          "avatar planet theme icons"
+        ]
+      },
+      {
+        "id": "movie_235",
+        "price": 100,
+        "previewUrl": "control/movie/movie_235/banner.webp",
+        "resourceUrl": "control/movie/movie_235/data.zip",
+        "keyword": [
+          "red spiderman control center",
+          "cool spidey superhero widgets",
+          "dark red spider man theme icons",
+          "cool marvel superhero control panel",
+          "aesthetic red web slinger theme design"
+        ]
+      },
+      {
+        "id": "movie_236",
+        "price": 100,
+        "previewUrl": "control/movie/movie_236/banner.webp",
+        "resourceUrl": "control/movie/movie_236/data.zip",
+        "keyword": [
+          "green doctor doom control center",
+          "dark emerald villain theme widgets",
+          "cool doctor doom UI icons",
+          "mystic marvel villain control panel",
+          "aesthetic green superhero theme design"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nature",
+    "name": "Nature",
+    "icon": "control/nature/ic_cate_nature.webp",
+    "items": [
+      {
+        "id": "nature_265",
+        "price": 100,
+        "previewUrl": "control/nature/nature_265/banner.webp",
+        "resourceUrl": "control/nature/nature_265/data.zip",
+        "keyword": [
+          "paper boat control center",
+          "blue sky white clouds theme widgets",
+          "sea blue glass control center icons",
+          "calm ocean reflection aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "nature_266",
+        "price": 100,
+        "previewUrl": "control/nature/nature_266/banner.webp",
+        "resourceUrl": "control/nature/nature_266/data.zip",
+        "keyword": [
+          "full moon control center",
+          "white dunes beige sky theme widgets",
+          "taupe glass control center icons",
+          "minimal neutral moon aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "nature_267",
+        "price": 100,
+        "previewUrl": "control/nature/nature_267/banner.webp",
+        "resourceUrl": "control/nature/nature_267/data.zip",
+        "keyword": [
+          "daisy meadow control center",
+          "green valley mountain theme widgets",
+          "sage green glass control center icons",
+          "spring nature flower aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "nature_268",
+        "price": 100,
+        "previewUrl": "control/nature/nature_268/banner.webp",
+        "resourceUrl": "control/nature/nature_268/data.zip",
+        "keyword": [
+          "mountain road control center",
+          "snow peak blue sky theme widgets",
+          "deep blue glass control center icons",
+          "pine forest road trip aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "nature_269",
+        "price": 100,
+        "previewUrl": "control/nature/nature_269/banner.webp",
+        "resourceUrl": "control/nature/nature_269/data.zip",
+        "keyword": [
+          "snow mountain control center",
+          "misty blue sky peak theme widgets",
+          "steel blue glass control center icons",
+          "winter alpine aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "nature_270",
+        "price": 100,
+        "previewUrl": "control/nature/nature_270/banner.webp",
+        "resourceUrl": "control/nature/nature_270/data.zip",
+        "keyword": [
+          "green hills control center",
+          "misty valley blue sky theme widgets",
+          "mint green glass control center icons",
+          "foggy rolling hills aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "nature_271",
+        "price": 100,
+        "previewUrl": "control/nature/nature_271/banner.webp",
+        "resourceUrl": "control/nature/nature_271/data.zip",
+        "keyword": [
+          "pink moon control center",
+          "purple sky pink beach theme widgets",
+          "rose pink glass control center icons",
+          "dreamy moonlight ocean aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "nature_272",
+        "price": 100,
+        "previewUrl": "control/nature/nature_272/banner.webp",
+        "resourceUrl": "control/nature/nature_272/data.zip",
+        "keyword": [
+          "sand mountain control center",
+          "beige mirror reflection theme widgets",
+          "warm grey glass control center icons",
+          "minimal neutral desert aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "nature_273",
+        "price": 100,
+        "previewUrl": "control/nature/nature_273/banner.webp",
+        "resourceUrl": "control/nature/nature_273/data.zip",
+        "keyword": [
+          "yellow wildflower control center",
+          "sparkling lake spring theme widgets",
+          "pastel green glass control center icons",
+          "fresh spring flower aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "nature_274",
+        "price": 100,
+        "previewUrl": "control/nature/nature_274/banner.webp",
+        "resourceUrl": "control/nature/nature_274/data.zip",
+        "keyword": [
+          "pink mountain sunset control center",
+          "purple misty valley theme widgets",
+          "plum glass control center icons",
+          "pink wildflower alpine aesthetic theme icons"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pastel",
+    "name": "Pastel",
+    "icon": "control/pastel/ic_cate_pastel.webp",
+    "items": [
+      {
+        "id": "pastel_255",
+        "price": 100,
+        "previewUrl": "control/pastel/pastel_255/banner.webp",
+        "resourceUrl": "control/pastel/pastel_255/data.zip",
+        "keyword": [
+          "pastel pink control center",
+          "dreamy pink cloud theme widgets",
+          "soft blush glass control center icons",
+          "pink sea of clouds aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "pastel_256",
+        "price": 100,
+        "previewUrl": "control/pastel/pastel_256/banner.webp",
+        "resourceUrl": "control/pastel/pastel_256/data.zip",
+        "keyword": [
+          "pastel beach control center",
+          "lavender ocean dreamy theme widgets",
+          "soft lilac glass control center icons",
+          "purple pastel sea sunset aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "pastel_257",
+        "price": 100,
+        "previewUrl": "control/pastel/pastel_257/banner.webp",
+        "resourceUrl": "control/pastel/pastel_257/data.zip",
+        "keyword": [
+          "pastel flower control center",
+          "wildflower meadow sunset theme widgets",
+          "soft peach glass control center icons",
+          "pastel flower field butterfly aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "pastel_258",
+        "price": 100,
+        "previewUrl": "control/pastel/pastel_258/banner.webp",
+        "resourceUrl": "control/pastel/pastel_258/data.zip",
+        "keyword": [
+          "fresh green control center",
+          "spring leaves sunlight theme widgets",
+          "sage green glass control center icons",
+          "green canopy ribbon dreamy aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "pastel_259",
+        "price": 100,
+        "previewUrl": "control/pastel/pastel_259/banner.webp",
+        "resourceUrl": "control/pastel/pastel_259/data.zip",
+        "keyword": [
+          "pastel silk control center",
+          "iridescent flowing fabric theme widgets",
+          "periwinkle glass control center icons",
+          "holographic silk wave aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "pastel_260",
+        "price": 100,
+        "previewUrl": "control/pastel/pastel_260/banner.webp",
+        "resourceUrl": "control/pastel/pastel_260/data.zip",
+        "keyword": [
+          "pastel gradient control center",
+          "soft pink orb bubble theme widgets",
+          "orchid glass control center icons",
+          "holographic pastel sphere aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "pastel_261",
+        "price": 100,
+        "previewUrl": "control/pastel/pastel_261/banner.webp",
+        "resourceUrl": "control/pastel/pastel_261/data.zip",
+        "keyword": [
+          "pastel feather control center",
+          "soft fluffy feather theme widgets",
+          "periwinkle glass control center icons",
+          "pink blue feather dreamy aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "pastel_262",
+        "price": 100,
+        "previewUrl": "control/pastel/pastel_262/banner.webp",
+        "resourceUrl": "control/pastel/pastel_262/data.zip",
+        "keyword": [
+          "pastel water control center",
+          "clear liquid wave theme widgets",
+          "baby blue glass control center icons",
+          "glossy water ripple aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "pastel_263",
+        "price": 100,
+        "previewUrl": "control/pastel/pastel_263/banner.webp",
+        "resourceUrl": "control/pastel/pastel_263/data.zip",
+        "keyword": [
+          "dreamy pastel control center",
+          "glass bubble terrarium theme widgets",
+          "periwinkle glass control center icons",
+          "lavender blossom tree lake aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "pastel_264",
+        "price": 100,
+        "previewUrl": "control/pastel/pastel_264/banner.webp",
+        "resourceUrl": "control/pastel/pastel_264/data.zip",
+        "keyword": [
+          "lavender field control center",
+          "purple pink sky rainbow theme widgets",
+          "mauve glass control center icons",
+          "dreamy lavender flower aesthetic theme icons"
+        ]
       }
     ]
   },
@@ -2917,6 +3680,121 @@
           "y2k aesthetic theme",
           "cute widget ios",
           "pink aesthetic theme"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "purple",
+    "name": "Purple",
+    "icon": "control/purple/ic_cate_purple.webp",
+    "items": [
+      {
+        "id": "purple_295",
+        "price": 100,
+        "previewUrl": "control/purple/purple_295/banner.webp",
+        "resourceUrl": "control/purple/purple_295/data.zip",
+        "keyword": [
+          "purple crystal galaxy control center",
+          "lavender cosmic clouds and planet wallpaper",
+          "glossy amethyst glass widgets",
+          "violet gemstone aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "purple_296",
+        "price": 100,
+        "previewUrl": "control/purple/purple_296/banner.webp",
+        "resourceUrl": "control/purple/purple_296/data.zip",
+        "keyword": [
+          "purple crystal galaxy control center",
+          "lavender cosmic clouds and planet wallpaper",
+          "glossy amethyst glass widgets",
+          "violet gemstone aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "purple_297",
+        "price": 100,
+        "previewUrl": "control/purple/purple_297/banner.webp",
+        "resourceUrl": "control/purple/purple_297/data.zip",
+        "keyword": [
+          "purple crystal galaxy control center",
+          "lavender cosmic clouds and planet wallpaper",
+          "glossy amethyst glass widgets",
+          "violet gemstone aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "purple_298",
+        "price": 100,
+        "previewUrl": "control/purple/purple_298/banner.webp",
+        "resourceUrl": "control/purple/purple_298/data.zip",
+        "keyword": [
+          "sunset purple beach control center",
+          "violet ocean waves pink sky theme widgets",
+          "lavender glass control center icons",
+          "dreamy purple twilight aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "purple_299",
+        "price": 100,
+        "previewUrl": "control/purple/purple_299/banner.webp",
+        "resourceUrl": "control/purple/purple_299/data.zip",
+        "keyword": [
+          "violet glass orbs control center",
+          "glossy purple 3D spheres theme widgets",
+          "lilac glass control center icons",
+          "abstract translucent purple aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "purple_300",
+        "price": 100,
+        "previewUrl": "control/purple/purple_300/banner.webp",
+        "resourceUrl": "control/purple/purple_300/data.zip",
+        "keyword": [
+          "lavender field sunset control center",
+          "purple lavender flowers lake theme widgets",
+          "lilac glass control center icons",
+          "dreamy pastel purple butterfly aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "purple_301",
+        "price": 100,
+        "previewUrl": "control/purple/purple_301/banner.webp",
+        "resourceUrl": "control/purple/purple_301/data.zip",
+        "keyword": [
+          "lilac silk waves control center",
+          "flowing translucent purple fabric theme widgets",
+          "soft lavender glass control center icons",
+          "abstract pastel purple aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "purple_302",
+        "price": 100,
+        "previewUrl": "control/purple/purple_302/banner.webp",
+        "resourceUrl": "control/purple/purple_302/data.zip",
+        "keyword": [
+          "glowing purple orb control center",
+          "deep violet gradient light sphere theme widgets",
+          "dark purple glass control center icons",
+          "minimal luminous purple aesthetic theme icons"
+        ]
+      },
+      {
+        "id": "purple_303",
+        "price": 100,
+        "previewUrl": "control/purple/purple_303/banner.webp",
+        "resourceUrl": "control/purple/purple_303/data.zip",
+        "keyword": [
+          "purple hot air balloon control center",
+          "misty mountains sunset clouds theme widgets",
+          "mauve glass control center icons",
+          "dreamy pastel purple sky aesthetic theme icons"
         ]
       }
     ]
